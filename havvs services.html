@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <title>Havvs services</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {   
+            background-image: url('home bg.jpg') ;
+            background-position: center;
+            background-repeat: none;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f2f2f2;
+            color: #333;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #007bff; 
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .service {
+            width: 300px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+        }
+
+        .service img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .service-content {
+            padding: 15px;
+        }
+
+        .service h2 {
+            font-size: 1.8rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            color: #666;
+        }
+        .field { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; }
+    input, select { width: 100%; padding: 8px; }
+    .btn { background-color: #4CAF50; color: white; padding: 10px; text-align: center; cursor: pointer; border: none; width: 100%; }
+    .stylable-button {
+      display: inline-flex;
+      padding: 10px 20px;
+      background-color: #0f78e1;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 4px;
+      text-align: center;
+      cursor:pointer;
+      text-decoration: none;
+    }
+    .stylable-button:hover {
+      background-color: #45a049;
+    }
+    /* Centering container for the button */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     height:20vh
+    }  footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            color: #666;
+        }
+  </style>
+        </style>    
+    </head>
+    <body>
+        <header>
+            <h1>Discover Our Services</h1>
+            <p>Explore a Variety of services that best suit you</p>
+        </header>
+        <div class="container">
+            <div class="service">
+                <img src="Residential cleaning_.jpg" alt="service image">
+                <div class="service-content">
+                    <h2>Residential cleaning</h2>
+                    <p>A clean home a happy home every time!</p>
+                    <p>Enjoy a clean and comfortable home every day. Our residential cleaning includes routine maintenance, deep cleaning, move-in/out cleaning, and seasonal cleaning. We ensure your home is spotless and inviting.</p>
+                    <div class="button-container">
+                        <span class="stylable-button" data-testid="stylablebutton-label">Book Now</span>
+                      </div>
+                </div>
+            </div>
+            <div class="service">
+                <img src="commercial cleaning.jpg" alt="service image">
+                <div class="service-content">
+                    <h2>Commercial Cleaning</h2>
+                    <p>Keeping Your Workspace Spotless, So You Can Focus on Success!</p>
+                    <p>Maintain a productive workspace with our professional commercial cleaning. From offices to retail stores, we offer customized cleaning plans to meet the unique needs of your business.</p>
+                    <div class="button-container">
+                        <span class="stylable-button" data-testid="stylablebutton-label">Book Now</span>
+                      </div>
+                </div>
+            </div>
+            <div class="service">
+                <img src="Event cleaning.jpg" alt="service">
+                <div class="service-content">
+                    <h2>Event cleaning</h2>
+                    <p>Before the Guests Arrive, After They Leave – We’ve Got You Covered!</p>
+                    <p>Our event cleaning services provide pre- and post-event cleanup for weddings, parties, corporate events, and more. We ensure that the venue is spotless before guests arrive and handle the cleanup after the event so you can focus on celebrating.</p>
+                    <p><strong>Details:</strong> From floor-to-ceiling cleaning to waste removal, our team takes care of everything. We set up the space, clean high-traffic areas, refresh restrooms, and manage waste disposal. After the event, we handle deep cleaning, organizing, and any necessary sanitization, leaving the venue spotless.</p>
+                    <div class="button-container">
+                        <span class="stylable-button" data-testid="stylablebutton-label">Book Now</span>
+                      </div>
+                </div>
+            </div>
+            <div class="service">
+                <img src="Disinfection service.jpg" alt="service">
+                <div class="service-content">
+                    <h2>Disinfection cleaning</h2>
+                    <p>Sanitized and Safe – Protecting What Matters Most!</p>
+                    <p>Our disinfection services follow strict sanitization protocols to ensure a safe, hygienic environment. This service is ideal for homes, offices, healthcare facilities, and other high-traffic areas needing thorough sanitization.</p>
+            <p><strong>Details:</strong> We use EPA-approved disinfectants to sanitize high-touch surfaces such as door handles, light switches, desks, and countertops. Our team is trained in COVID-19 protocols, ensuring every inch of your space is disinfected, reducing the risk of contamination.</p>
+                    <div class="button-container">
+                        <span class="stylable-button" data-testid="stylablebutton-label">Book Now</span>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
