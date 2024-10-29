@@ -201,7 +201,7 @@
                     <h2>Get In Touch</h2>
                     <p>Book Your Cleaning Today</p>
                     
-                    <form>
+                    <form onsubumit="send email(); reset(); return false;">
                       <div class="form-group">
                         <label for="first-name">First Name</label>
                         <input type="text" id="first-name" name="first-name" required>
@@ -250,5 +250,25 @@
                       <button type="submit" class="submit-btn">Book Now</button>
                     </form>
                   </div>
+          <script src="https://smtpjs.com/v3/smtp.js"></script>
+                  <script>
+                    function send email(){
+                      Email.send({
+    Host : "smtp.elasticemail.com",
+    To : 'aureliusm453@gmail.com',
+    From : document. getelementById("email").value,
+    Subject : "Bookings details",
+    Body : "Name:"+ document.getElementById("name").value
+    +"<br>Email:"+ document.getElementById("email").value
+    +"<br>Phone:"+ document.getElementById("phone").value
+    +"<br>Address:"+ document.getElementById("Address").value
+    +"<br>Rooms:"+ document.getElementById("rooms").value
+    +"<br>service:"+ document.getElementById("service").value
+}).then(
+  message => alert("message sent successfully")
+
+);
+                    }
+                  </script>
     </body>
 </html>
