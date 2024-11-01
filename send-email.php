@@ -16,12 +16,12 @@ $mail= new PHPMailer(true);
 
 $mail->isSMTP();
 $mail->SMTPAuth=true;
-$mail->Host="smtp.gmail.com"
+$mail->Host="smtp-relay.brevo.com"
 $mail->SMTPSecure= PHPMailer::ENCRYPTION_STARTTLS;
 $mail->port=587
 
- $mail->username="you@example.com"
- $mail->password="password"
+ $mail->username="7f1d55001@smtp-brevo.com"
+ $mail->password="YHwM0n3zZhgq2TK1"
 
  $mail->setFrom($email, $name);
  $mail->addAddress("aureliusm453@gmail.com", "Aurelius");
