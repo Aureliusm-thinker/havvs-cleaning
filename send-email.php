@@ -1,50 +1,55 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo "POST request received";
-    // Process form data here
+// Check if the form was submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitize and collect form data
+    $firstName = htmlspecialchars($_POST['first_name']);
+    $lastName = htmlspecialchars($_POST['last_name']);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $phone = htmlspecialchars($_POST['phone']);
+    $address = htmlspecialchars($_POST['address']);
+    $rooms = htmlspecialchars($_POST['rooms']);
+    $service = htmlspecialchars($_POST['service']);
+    
+    // Validate email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email format";
+        exit;
+    }
+
+    // Set up email details
+    $to = "youremail@example.com"; // Replace with your email
+    $subject = "New Cleaning Service Booking";
+    $message = "
+    <html>
+    <head>
+        <title>New Booking Request</title>
+    </head>
+    <body>
+        <h2>Booking Details</h2>
+        <p><strong>Name:</strong> $firstName $lastName</p>
+        <p><strong>Email:</strong> $email</p>
+        <p><strong>Phone:</strong> $phone</p>
+        <p><strong>Address:</strong> $address</p>
+        <p><strong>Rooms:</strong> $rooms</p>
+        <p><strong>Service:</strong> $service</p>
+    </body>
+    </html>";
+
+    // Set headers for HTML email
+    $headers = "MIME-Version: 1.0" . "\r\n";
+    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+    $headers .= "From: $email" . "\r\n";
+
+    // Attempt to send the email
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Thank you for your booking! We will get in touch soon.";
+    } else {
+        echo "Sorry, there was an issue sending your request. Please try again.";
+    }
 } else {
-    echo "Invalid request method";
+    echo "Invalid request method.";
 }
-
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-//Load Composer's autoloader
-require 'vendor/autoload.php';
-
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
-
-try {
-    //Server settings                     //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp-relay.brevo.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = '7f1d55001@smtp-brevo.com';                     //SMTP username
-    $mail->Password   = 'YHwM0n3zZhgq2TK1';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-    //Recipients
-    $mail->setFrom($email, $name);
-    $mail->addAddress('ryanhavana71@gmail.com', 'ryan');     //Add a recipient
-    $mail->addReplyTo('aurelius453@gmail.com', 'Information');
-
-
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-    $mail->send();
-    header(sent.html);
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
+?>
 
 
 
