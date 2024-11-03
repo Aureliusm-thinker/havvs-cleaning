@@ -1,4 +1,11 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    echo "POST request received";
+    // Process form data here
+} else {
+    echo "Invalid request method";
+}
+
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
