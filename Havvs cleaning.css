@@ -243,4 +243,59 @@
     margin-top: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
+/* Mobile styles (screens up to 600px wide) */
+@media (max-width: 600px) {
+    /* Navbar adjustments */
+    .navbar .navdiv ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .navdiv ul li {
+        margin: 10px 0;
+    }
+
+    /* Adjust the logo size */
+    .logo img {
+        height: 40px;
+    }
+
+    /* About Us and Services section */
+    .about-us-container, .services {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Service cards stacking vertically */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 100%;
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    /* Contact Form adjustments */
+    .form-container form {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    /* Price Display highlight */
+    #price-display {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    /* Footer adjustments */
+    footer {
+        padding: 10px;
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
    
