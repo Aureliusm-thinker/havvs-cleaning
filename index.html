@@ -302,34 +302,13 @@ function showSection(sectionId) {
         } else {
             section.classList.add("hidden"); // Hide all other sections
         }
-        
     });
-}
-document.getElementById("home-link").addEventListener("click", function(event) {
-    event.preventDefault();  // Prevent the default link behavior
-    resetPage();  // Call reset function
-});
 
-function resetPage() {
-    // Hide all sections
-    const sections = document.querySelectorAll(".section, .about-us-container, .mess, .form-container");
-    sections.forEach(section => section.classList.add("hidden"));
-    
-    // Show the "Home" section (which can be the initial page content)
-    const homeSection = document.getElementById("home");
-    if (homeSection) {
-        homeSection.classList.remove("hidden");
+    // Additional check to show form container if needed
+    if (sectionId === "cleaning" || sectionId === "recruitment") {
+        document.querySelector(".form-container").classList.remove("hidden");
     }
-
-    // Optionally, reset other states like form inputs or selections
-    document.getElementById("booking-form").reset();
-    document.getElementById("price-display").textContent = "Total Price: AED";
-    document.getElementById("service").value = "";
-    document.getElementById("hours").value = "";
-    document.getElementById("workers").value = "";
-    document.getElementById("materials").checked = false;
 }
-
 
 
         function calculatePrice() {
